@@ -1,26 +1,24 @@
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
-const { PersonRouter } = require('./routes/PersonRouter');
+import { PersonRouter } from './routes/PersonRouter';
 
 // Create a new express application instance
 const app = express();
 app.use(bodyParser.json());
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');  
-});
- 
+app.use(express.static('public'));
 
 class AppBuilder {
 
-  constructor(app){
-    this.app = app;
+  constructor(private readonly app: any){
     this.setUpMiddleware();
     this.setUpRoutes();
   }
 
   setUpMiddleware(){
     //this.setUpMongoLib();
+    app.use(express.static(path.join(__dirname, 'clientapp')));
   }
 
   setUpRoutes() {
