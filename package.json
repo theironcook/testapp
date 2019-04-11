@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "BUILD_OHYEHHH",
+    "postinstall": "npm run build",
     "start": "START_OHYEHHH"
   },
   "author": "",
