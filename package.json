@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "buildServer": "tsc",
-    "buildAll": "(tsc || exit 0) && npm i -g @vue/cli && cd src/client && npm i && npm run build",
+    "buildAll": "(tsc || exit 0) && cd src/client && npm i && npm run build",
     "postinstall": "npm run buildAll",
     "start": "node dist/App.js"
   },
